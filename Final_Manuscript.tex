@@ -38,7 +38,7 @@ Hao Zhang is with the School of Microelectronics, Northwestern Polytechnical Uni
 Yi Huang is with the Department of Electrical Engineering and Electronics,
 University of Liverpool, Liverpool L69 3BX, U.K.}}
 
-\markboth{IEEE ANTENNAS AND WIRELESS PROPAGATION LETTERS, VOL. XX, NO. X, XXXX 2026}%
+\markboth{IEEE MICROWAVE AND WIRELESS TECHNOLOGY LETTERS, VOL. XX, NO. X, XXXX 2026}%
 {How to Use the IEEEtran \LaTeX \ Templates}
 
 \maketitle
@@ -77,16 +77,16 @@ In this letter, an orientation-tolerant WPT system based on a planar switched co
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=1\linewidth]{rt1.png}
-\caption{Nominal vertical configuration of the proposed WPT system. The receiver is placed orthogonal to the transmitter plane and can rotate azimuthally by $\theta^\circ$ around the z-axis.}
+\includegraphics[width=1\linewidth]{equip.png}
+\caption{Prototype and measurement setup of the proposed WPT system. The nominal vertical Rx configuration corresponds to $\phi=90^\circ$, and the Rx azimuthal rotation angle is denoted by $\theta$.}
 \label{fig2}
 \end{figure}
 
 The transmitter topology of the proposed WPT system is shown in Fig.~\ref{fig1}. It consists of three triangular double-D (DD) coils and a coil-switching network. A hexagonal source loop is placed at the bottom of the transmitter and is connected to the three coils through normally open relays (Omron G6L-1F). To energize a particular coil, the two relays associated with that coil are closed, while the others remain open, so that only one Tx coil is activated at a time. The transmitter is driven by a single-channel excitation source (i.e., one port).
 
-Because the Tx array is formed by DD coils, which create alternating N--S poles through oppositely wound spirals, the magnetic field produced by the Tx array has components parallel to the Tx plane. Based on this, the nominal Rx configuration is orthogonal to the Tx plane, as shown in Fig.~\ref{fig2}.
+Because the Tx array is formed by DD coils, which create alternating N--S poles through oppositely wound spirals, the magnetic field produced by the Tx array has components parallel to the Tx plane. Based on this, the nominal Rx configuration is orthogonal to the Tx plane. As shown in Fig.~\ref{fig2}, the fabricated transmitter was clamped by two hangers, and the receiver was held by an adjustable plastic arm to allow azimuthal rotation and elevation variation.
 
-The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, fabricated on an FR4 substrate of $86 \times 86$~mm. The proposed WPT system is designed to tolerate both azimuth and elevation variation in Rx orientation. During azimuthal rotation, different Tx coils are activated in different angular regions to maintain effective power transfer. Specifically, coil~1 covers $120^\circ$--$180^\circ$ and $300^\circ$--$360^\circ$, coil~2 covers $60^\circ$--$120^\circ$ and $240^\circ$--$300^\circ$, and coil~3 covers $0^\circ$--$60^\circ$ and $180^\circ$--$240^\circ$. For elevation variation, the DD coil can naturally maintain effective coupling, because its magnetic field contains components intersecting the Rx plane when the Rx is tilted.
+The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, fabricated on an FR4 substrate of $86 \times 86$~mm. The Rx coil has nine turns, with an inner radius of 20.0~mm, an outer radius of 38.2~mm, a trace width of 1.4~mm, and a trace gap of 0.7~mm. The proposed WPT system is designed to tolerate both azimuth and elevation variation in Rx orientation. During azimuthal rotation, different Tx coils are activated in different angular regions to maintain effective power transfer. Specifically, coil~1 covers $120^\circ$--$180^\circ$ and $300^\circ$--$360^\circ$, coil~2 covers $60^\circ$--$120^\circ$ and $240^\circ$--$300^\circ$, and coil~3 covers $0^\circ$--$60^\circ$ and $180^\circ$--$240^\circ$. For elevation variation, the DD coil can naturally maintain effective coupling, because its magnetic field contains components intersecting the Rx plane when the Rx is tilted.
 
 \begin{figure}[!t]
 \centering
@@ -97,7 +97,7 @@ The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, f
 
 The equivalent circuit of the proposed WPT system is shown in Fig.~\ref{fig3}. Each Tx coil is modeled as a separate RLC branch, which includes a resonant capacitor that tunes the system operating frequency to 13.56~MHz. For each switching state, the active Tx branch and the Rx coil form a conventional two-coil WPT system with series--series (SS) compensation.
 
-To evaluate the performance of the proposed WPT system, the power transfer efficiency (PTE) is calculated from the measured S-parameters as follows \cite{pte1}:
+The S-parameters were measured using a vector network analyzer (Keysight E5071C), and the relay network was controlled by an Arduino Uno R3 microcontroller. To evaluate the performance of the proposed WPT system, the power transfer efficiency (PTE) is calculated from the measured S-parameters as follows \cite{pte1}:
 
 \begin{equation}
 \label{deqn_ex1}
@@ -108,30 +108,19 @@ To evaluate the performance of the proposed WPT system, the power transfer effic
 
 \section{Results and Comparison}
 
-\begin{figure*}[!t]
-\centering
-\subfloat[]{\includegraphics[width=0.26\linewidth]{Coil 1_Hz.png}%
-\label{fig4a}}
-\hfill
-\subfloat[]{\includegraphics[width=0.26\linewidth]{Coil 2_Hz.png}%
-\label{fig4b}}
-\hfill
-\subfloat[]{\includegraphics[width=0.26\linewidth]{Coil 3_Hz.png}%
-\label{fig4c}}
-\caption{Simulated $z$\mbox{-}component magnetic field strength for each individual coil of the proposed hexagonal array transmitter at $z=5$~mm: (a) Triangular Double-D coil 1, (b) Triangular Double-D coil 2, and (c) Triangular Double-D coil 3.}
-\label{fig4}
-\end{figure*}
-
 \begin{figure}[!t]
 \centering
-\includegraphics[width=1\linewidth]{equip.png}
-\caption{Measurement setup for the proposed WPT system.}
-\label{fig5}
+\subfloat[]{\includegraphics[width=0.33\linewidth]{field1.png}%
+\label{fig4a}}
+\subfloat[]{\includegraphics[width=0.33\linewidth]{field2.png}%
+\label{fig4b}}
+\subfloat[]{\includegraphics[width=0.33\linewidth]{field3.png}%
+\label{fig4c}}
+\caption{Simulated $z$\mbox{-}component magnetic field strength for each individual coil of the proposed hexagonal array transmitter at $z=5$~mm: (a) Double-D coil 1, (b) Double-D coil 2, and (c) Double-D coil 3.}
+\label{fig4}
 \end{figure}
 
-Full-wave simulations of the hexagonal array transmitter were conducted in CST Studio Suite to evaluate the magnetic field distribution. At a height of $z=5$~mm above the transmitter plane, the $z$-component of the magnetic field strength was recorded for each coil when energized individually, as shown in Fig.~\ref{fig4}: Coil~1 (a), Coil~2 (b), and Coil~3 (c). The two spirals within each triangular Double-D (DD) coil produced comparable field strength with opposite directions, and all three cases exhibited clear N–S polarity, which preliminarily verified the intended behavior of DD coil. The relay network successfully achieved single-coil selection and no noticeable interference was introduced by deactivated coils.
-
-The experimental platform used to implement the proposed WPT system is shown in Fig.~\ref{fig5}, corresponding to the configuration in Fig.~\ref{fig2}. The fabricated transmitter was clamped by two hangers, and the receiver was clamped by an adjustable plastic arm to allow elevation and azimuth variation. The vector network analyzer (Keysight E5071C) was used to measure the S-parameters of the proposed WPT system, from which the PTE was calculated. An Arduino Uno R3 microcontroller was used to control the relay network.
+Full-wave simulations of the hexagonal array transmitter were conducted in CST Studio Suite to evaluate the magnetic field distribution. At a height of $z=5$~mm above the transmitter plane, the $z$-component of the magnetic field strength was recorded for each coil when energized individually, as shown in Fig.~\ref{fig4}. The two spirals within each triangular Double-D (DD) coil produced comparable field strength with opposite directions, and all three cases exhibited clear N–S polarity, which preliminarily verified the intended behavior of DD coil. The relay network successfully achieved single-coil selection and no noticeable interference was introduced by deactivated coils.
 
 An azimuthal rotation experiment was performed with the vertical Rx setup ($\phi=90^\circ$). As shown in Fig.~\ref{fig6}, by switching among the three Tx coils, the proposed system maintains effective power transfer over the full azimuth range of $\theta=0^\circ$ to $360^\circ$. The measured average PTE is 66.4\%, with a maximum of 68.3\% and a minimum of 63.4\%.
 
@@ -228,16 +217,13 @@ Furthermore, the lateral misalignment tolerance of the proposed WPT system was t
 \label{fig8}
 \end{figure}
 
-Finally, Table \ref{tab1} compares the proposed system with recent orientation-tolerant WPT systems reported from 2023 to 2026. The proposed system provides orientation-tolerance capability comparable to that of other recent works. However, in terms of control implementation, other systems usually rely on more complex strategies. For example, \cite{consu} employs three excitation channels with amplitude modulation, \cite{multi} adopts four-channel closed-loop phase control, and \cite{uav} uses two excitation channels together with PWM and phase control. These methods all require independent control of each excitation channel to create rotating or targeted magnetic fields. By contrast, the proposed system requires only a single excitation channel and is controlled through a simple coil-switching strategy.
+Finally, Table \ref{tab1} compares the proposed system with recent orientation-tolerant WPT systems. The proposed system provides orientation-tolerance capability comparable to that of other recent works. However, in terms of control implementation, other systems usually rely on more complex strategies. For example, \cite{consu} employs three excitation channels with amplitude modulation, \cite{multi} adopts four-channel closed-loop phase control, and \cite{uav} uses two excitation channels together with PWM and phase control. These methods all require independent control of each excitation channel to create rotating or targeted magnetic fields. By contrast, the proposed system requires only a single excitation channel and is controlled through a simple coil-switching strategy.
 
 In addition, \cite{3D} also adopts a coil-switching strategy, but its 3-D Tx geometry is more suitable for charging devices in idle states, whereas the proposed planar Tx is better suited to charge-while-use applications due to its open transmitter structure. Furthermore, \cite{hybrid} presents an elegant passive solution based on a multilayer hybrid Tx structure without active control, whereas the proposed system employs a simpler single-layer coil structure together with a simple control scheme. Overall, the proposed system provides an effective orientation-tolerance method with a simple coil structure and control scheme.
 
 
 \section{conclusion}
 An orientation-tolerant wireless power transfer system based on a planar switched coil array has been demonstrated at 13.56~MHz. Experimental results verify that the proposed system can maintain stable power transfer over the full azimuth range, while also exhibiting tolerance to elevation variation and lateral misalignment. These results confirm that the proposed system provides an effective orientation-tolerant WPT solution with a simple planar transmitter structure and single-channel coil-switching control.
-
-\section{Acknowledgment}
-The authors would like to express their sincere gratitude to CST AG for providing the CST STUDIO SUITE® electromagnetic simulation software package under the China Key University Promotion Program, and Suzhou Municipal Key Lab for Wireless Broadband Access Technologies in the School of Advanced Technology, Xi’an Jiaotong-Liverpool University, for research facilities.
 
 
 \newpage
