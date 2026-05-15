@@ -1,0 +1,30 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.pdf
+*.svg
+# minted
+_minted*
+*.pyg
+
+# latexmk / build dirs
+/build/
+/out/
+
+# OS / editor
+.DS_Store
+.vscode/
