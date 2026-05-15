@@ -27,7 +27,7 @@
 
 \begin{document}
 
-\title{Orientation-Tolerant Wireless Power Transfer System Based on a Planar Switched Coil Array}
+\title{Orientation-Tolerant Wireless Power Transfer System Based on a Printed Switched-Coil Array}
 \author{Weijun Hong, Jingchen Wang, Zhao Wang, Rui Pei, Hao Zhang, Yi Huang,~\textit{Fellow,~IEEE}, Eng~Gee~Lim,~\textit{Senior~Member,~IEEE}
 \thanks{This work is partially supported by the XJTLU AI University Research Centre, Jiangsu Province Engineering Research Centre of Data Science and Cognitive Computation at XJTLU and SIP AI innovation platform (YZCXPT2022103), and XJTLU Research Development Fund (RDF-24-01-079, and RDF-22-02-099) (Corresponding author: Jingchen Wang and Eng Gee Lim.)
 
@@ -44,7 +44,7 @@ University of Liverpool, Liverpool L69 3BX, U.K.}}
 \maketitle
 
 \begin{abstract}
-In this letter, an orientation-tolerant wireless power transfer (WPT) system based on a planar switched coil array is proposed and demonstrated at 13.56~MHz. The transmitter consists of three planar triangular Double-D coils arranged as a hexagonal array and driven by a relay-based coil-switching network. Measurements show that the proposed system achieves stable power transfer over the full azimuth range of 0$^\circ$--360$^\circ$, with an average power transfer efficiency (PTE) of 66.4\%. Additional measurements confirm that the PTE remains above 60\% under elevation variation and above 65\% during azimuthal rotation at  different elevation angles (30$^\circ$ and 60$^\circ$). These results demonstrate that the proposed system provides an effective orientation-tolerant WPT solution with a simple single-layer transmitter structure and a low-complexity single-channel coil-switching control scheme.
+In this letter, an orientation-tolerant wireless power transfer (WPT) system based on a printed switched-coil array is proposed and demonstrated at 13.56~MHz. The transmitter consists of three single-layer triangular Double-D coils arranged as a hexagonal array and driven by a relay-based coil-switching network. Measurements show that the proposed system achieves stable power transfer over the full azimuth range of 0$^\circ$--360$^\circ$, with an average power transfer efficiency (PTE) of 66.4\%. Additional measurements confirm that the PTE remains above 60\% under elevation variation and above 65\% during azimuthal rotation at  different elevation angles (30$^\circ$ and 60$^\circ$). These results demonstrate that the proposed system provides an effective orientation-tolerant WPT solution with a simple single-layer transmitter structure and a low-complexity single-channel excitation architecture with discrete coil selection.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -58,13 +58,13 @@ Wireless power transfer (WPT), orientation-tolerance, angular misalignment, char
 \section{Introduction}
 \IEEEPARstart{N}{ear-field} wireless power transfer (WPT) has been widely studied for contactless energy delivery in consumer electronics \cite{consumer}, wearable devices \cite{wearable}, biomedical systems \cite{bio}, and electric-vehicle applications \cite{ev}. In practical scenarios, the relative position and orientation between transmitter and receiver may vary and cause misalignment. To maintain stable power delivery, the design of WPT systems with misalignment tolerance remains a long-standing challenge.
 
-Many studies have improved misalignment tolerance by modifying the coil geometry \cite{geo1,geo2,geo3,geo4} or coil arrangement \cite{ar1,ar2,ar3,ar4}. These methods can alleviate coupling degradation when the receiver is laterally displaced over the transmitter surface. However, most of them are developed under the assumption that the transmitter (Tx) and Receiver (Rx) coils remain parallel, and therefore cannot accommodate orientation misalignment caused by receiver rotation or elevation variation.
+Many studies have improved misalignment tolerance by modifying the coil geometry \cite{geo1,geo3,geo4} or coil arrangement \cite{ar3,ar4}. These methods can alleviate coupling degradation when the receiver is laterally displaced over the transmitter surface. However, most of them are developed under the assumption that the transmitter (Tx) and Receiver (Rx) coils remain parallel, and therefore cannot accommodate orientation misalignment caused by receiver rotation or elevation variation.
 
-A common approach to improving orientation tolerance is to employ three-dimensional coil structures. Three-dimensional receivers can effectively maintain coupling in different orientations \cite{3drx1,3drx2,3drx3,3drx4,3drx5}, but their volumetric structure limits their suitability for compact devices. Alternatively, three-dimensional transmitters can also provide good orientation tolerance while allowing the receiver to remain planar \cite{comp1,comp2,om2014,bowl,3D}. However, enclosing transmitter structures may obstruct the device during charging, making them less suitable for charge-while-use applications.
+A common approach to improving orientation tolerance is to employ three-dimensional coil structures. Three-dimensional receivers can effectively maintain coupling in different orientations \cite{3drx1,3drx3,3drx5}, but their volumetric structure limits their suitability for compact devices. Alternatively, three-dimensional transmitters can also provide good orientation tolerance while allowing the receiver to remain planar \cite{comp2,bowl,3D}. However, enclosing transmitter structures may obstruct the device during charging, making them less suitable for charge-while-use applications.
 
-More recently, orientation-tolerant WPT systems have also been realized with planar coil structures only. For example, \cite{consu} generates a rotating magnetic field by applying amplitude modulation. In \cite{multi}, magnetic field shaping is achieved through closed-loop phase control. In addition, \cite{uav} realizes a targeted magnetic field using PWM duty-cycle scanning together with phase control. These methods can effectively address orientation misalignment without using 3D coils. However, they often require more complicated control schemes that involve multiple excitation channels or multilayer coil structures.
+More recently, orientation-tolerant WPT systems have also been realized with planar coil structures only. For example, \cite{consu} generates a rotating magnetic field by applying amplitude modulation. In \cite{multi}, magnetic field shaping is achieved through closed-loop phase control. These methods can effectively address orientation misalignment without using 3D coils. However, they often require more complex implementations that involve multiple excitation channels or multilayer coil structures.
 
-In this letter, an orientation-tolerant WPT system based on a planar switched coil array is proposed. With its simple single-layer and open transmitter structure, the proposed system is suitable for charge-while-use applications and can maintain effective power transfer under both azimuthal and elevation variation.
+In this letter, an orientation-tolerant WPT system based on a printed switched-coil array is proposed. With its simple single-layer and open transmitter structure, the proposed system is suitable for charge-while-use applications and can maintain effective power transfer under both azimuthal and elevation variation.
 
 \section{Proposed WPT System}
 
@@ -86,7 +86,9 @@ The transmitter topology of the proposed WPT system is shown in Fig.~\ref{fig1}.
 
 Because the Tx array is formed by DD coils, which create alternating N--S poles through oppositely wound spirals, the magnetic field produced by the Tx array has components parallel to the Tx plane. Based on this, the nominal Rx configuration is orthogonal to the Tx plane. As shown in Fig.~\ref{fig2}, the fabricated transmitter was clamped by two hangers, and the receiver was held by an adjustable plastic arm to allow azimuthal rotation and elevation variation.
 
-The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, fabricated on an FR4 substrate of $86 \times 86$~mm. The Rx coil has nine turns, with an inner radius of 20.0~mm, an outer radius of 38.2~mm, a trace width of 1.4~mm, and a trace gap of 0.7~mm. The proposed WPT system is designed to tolerate both azimuth and elevation variation in Rx orientation. During azimuthal rotation, different Tx coils are activated in different angular regions to maintain effective power transfer. Specifically, coil~1 covers $120^\circ$--$180^\circ$ and $300^\circ$--$360^\circ$, coil~2 covers $60^\circ$--$120^\circ$ and $240^\circ$--$300^\circ$, and coil~3 covers $0^\circ$--$60^\circ$ and $180^\circ$--$240^\circ$. For elevation variation, the DD coil can naturally maintain effective coupling, because its magnetic field contains components intersecting the Rx plane when the Rx is tilted.
+The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, fabricated on an FR4 substrate of $86 \times 86$~mm. The Rx coil has nine turns, with an inner radius of 20.0~mm, an outer radius of 38.2~mm, a trace width of 1.4~mm, and a trace gap of 0.7~mm. Both the Tx and Rx coils are fabricated on a 1.0~mm thick FR4 substrate.
+
+The proposed WPT system is designed to tolerate both azimuth and elevation variation in Rx orientation. During azimuthal rotation, different Tx coils are activated in different angular regions to maintain effective power transfer. Specifically, coil~1 covers $120^\circ$--$180^\circ$ and $300^\circ$--$360^\circ$, coil~2 covers $60^\circ$--$120^\circ$ and $240^\circ$--$300^\circ$, and coil~3 covers $0^\circ$--$60^\circ$ and $180^\circ$--$240^\circ$. For elevation variation, the DD coil can naturally maintain effective coupling, because its magnetic field contains components intersecting the Rx plane when the Rx is tilted.
 
 \begin{figure}[!t]
 \centering
@@ -97,7 +99,7 @@ The Rx used in this work is a planar circular coil with a diameter of 78.4~mm, f
 
 The equivalent circuit of the proposed WPT system is shown in Fig.~\ref{fig3}. Each Tx coil is modeled as a separate RLC branch, which includes a resonant capacitor that tunes the system operating frequency to 13.56~MHz. For each switching state, the active Tx branch and the Rx coil form a conventional two-coil WPT system with series--series (SS) compensation.
 
-The S-parameters were measured using a vector network analyzer (Keysight E5071C), and the relay network was controlled by an Arduino Uno R3 microcontroller. To evaluate the performance of the proposed WPT system, the power transfer efficiency (PTE) is calculated from the measured S-parameters as follows \cite{pte1}:
+The S-parameters were measured using a vector network analyzer (Keysight E5071C), and the relay states were set by an Arduino Uno R3 microcontroller. To evaluate the performance of the proposed WPT system, the power transfer efficiency (PTE) is calculated from the measured S-parameters as follows \cite{pte1}:
 
 \begin{equation}
 \label{deqn_ex1}
@@ -142,69 +144,6 @@ An azimuthal rotation experiment was performed with the vertical Rx setup ($\phi
 
 To investigate elevation variation, an elevation-only test was carried out under $\theta=0^\circ$ with coil 1 activated. As shown in Fig.~\ref{fig7}(a), the proposed WPT system maintains a PTE greater than 60\% for Rx elevations from $\phi=0^\circ$ to $180^\circ$ in increments of $30^\circ$. The lowest PTE actually occurs at the nominal vertical Rx position ($\phi=90^\circ$), where the measured value is about 64.7\%. This is because, as the Rx tilts away from the vertical position, part of the Rx coil moves closer to the Tx array, thereby reducing the coupling distance.
 
-\begin{table*}[!t]
-\centering
-\setlength{\tabcolsep}{7pt}
-\renewcommand{\arraystretch}{2.5}
-
-\caption{Comparison with other orientation-tolerant WPT systems}
-\label{tab1}
-
-\begin{threeparttable}
-\begin{tabular}{ccccccc}
-\hline
-\textbf{Ref.}  & \cite{3D} & \cite{consu} & \cite{hybrid} & \cite{multi} & \cite{uav} & \textbf{This work} \\
-\hline
-\hline
-Year  & 2023 & 2024 & 2024 & 2024 & 2026 & \textbf{-} \\
-\hline
-Freq. (MHz) & 6.78 & 6.78 & 6.78 & 6.78 & 0.1 & \textbf{13.56} \\
-\hline
-\makecell{Tx geometry \\ / size (mm)} 
-& \makecell{3-D rectangular \\ $201\times201\times51$} 
-& \makecell{2-D multilayer \\ $200\times200$} 
-& \makecell{2-D multilayer \\ $110\times110$} 
-& \makecell{2-D multilayer \\ $200\times200$} 
-& \makecell{2-D single-layer \\ $500\times500$} 
-& \textbf{\makecell{2-D single-layer\\ 153 × 135}} \\
-
-\makecell{Rx geometry \\ / size (mm)} 
-& \makecell{2-D single-layer \\ $81\times51$} 
-& \makecell{2-D single-layer \\ $70\times70$} 
-& \makecell{2-D single-layer \\ $70\times80$} 
-& \makecell{2-D single-layer \\ $100\times70$} 
-& \makecell{2-D single-layer \\ $200\times50$} 
-& \textbf{\makecell{2-D single-layer \\ 86 × 86}} \\
-\hline
-Control method  
-& coil switching 
-& AM modulation 
-& none 
-& phase control 
-& PWM + phase control 
-& \textbf{coil switching} \\
-
-Excitation channels & 1 & 3 & 1 & 4 & 2 & \textbf{1} \\
-\hline
-Orientation-tolerance & \tnote{1} A, E & A, E & A, E & A, E & A & \textbf{A, E} \\
-\hline
-Peak efficiency & 71.6\% & 78\% & 80\% & 80.2\% & 89.5\% & \textbf{85.6\%} \\
-\hline
-\end{tabular}
-\vspace{0.5em}
-
-\begin{tablenotes}
-\footnotesize
-\item[1] A and E denote azimuth and elevation tolerance, respectively.
-\end{tablenotes}
-
-\end{threeparttable}
-\end{table*}
-
-
-Additionally, azimuthal rotation was investigated at different elevation angles, as shown in Fig.~\ref{fig7}(b). The PTE was measured over an azimuthal range of $\theta=0^\circ - 180^\circ$ in $15^\circ$ increments at $\phi=30^\circ$ and $\phi=60^\circ$. In both cases, the PTE remains above 65\% over the entire rotation range. The average measured PTE is 81.6\% at $\phi=30^\circ$ and 70.2\% at $\phi=60^\circ$, while the peak PTE reaches 85.6\% at $\phi=30^\circ$. These results indicate that the proposed WPT system can maintain orientation tolerance under different elevation conditions, and can therefore accommodate both azimuthal and elevation misalignment simultaneously.
-
-Furthermore, the lateral misalignment tolerance of the proposed WPT system was tested. As shown in Fig.~\ref{fig8}(a), the Rx coil was placed parallel to the Tx plane with a gap distance of 40 mm and moved to 15 positions arranged in a $3\times5$ grid. As shown in Fig.~\ref{fig8}(b), the proposed system maintains a PTE above 50\% even at the farthest offset positions, indicating effective power transfer under relatively large lateral offsets. However, when the Rx coil is located at the geometric center of the Tx coil array, the measured PTE drops to 9.3\% because of the intrinsic field-cancellation effect of the DD coil structure. Despite this limitation, the results demonstrate that the proposed system can maintain effective power transfer under lateral misalignment.
 
 \begin{figure}[!t]
 \centering
@@ -217,13 +156,62 @@ Furthermore, the lateral misalignment tolerance of the proposed WPT system was t
 \label{fig8}
 \end{figure}
 
-Finally, Table \ref{tab1} compares the proposed system with recent orientation-tolerant WPT systems. The proposed system provides orientation-tolerance capability comparable to that of other recent works. However, in terms of control implementation, other systems usually rely on more complex strategies. For example, \cite{consu} employs three excitation channels with amplitude modulation, \cite{multi} adopts four-channel closed-loop phase control, and \cite{uav} uses two excitation channels together with PWM and phase control. These methods all require independent control of each excitation channel to create rotating or targeted magnetic fields. By contrast, the proposed system requires only a single excitation channel and is controlled through a simple coil-switching strategy.
 
-In addition, \cite{3D} also adopts a coil-switching strategy, but its 3-D Tx geometry is more suitable for charging devices in idle states, whereas the proposed planar Tx is better suited to charge-while-use applications due to its open transmitter structure. Furthermore, \cite{hybrid} presents an elegant passive solution based on a multilayer hybrid Tx structure without active control, whereas the proposed system employs a simpler single-layer coil structure together with a simple control scheme. Overall, the proposed system provides an effective orientation-tolerance method with a simple coil structure and control scheme.
+Additionally, azimuthal rotation was investigated at different elevation angles, as shown in Fig.~\ref{fig7}(b). The PTE was measured over an azimuthal range of $\theta=0^\circ - 180^\circ$ in $15^\circ$ increments at $\phi=30^\circ$ and $\phi=60^\circ$. In both cases, the PTE remains above 65\% over the entire rotation range. The average measured PTE is 81.6\% at $\phi=30^\circ$ and 70.2\% at $\phi=60^\circ$, while the peak PTE reaches 85.6\% at $\phi=30^\circ$. These results indicate that the proposed WPT system can maintain orientation tolerance under different elevation conditions, and can therefore accommodate both azimuthal and elevation misalignment simultaneously.
+
+Furthermore, the lateral misalignment tolerance of the proposed WPT system was tested. As shown in Fig.~\ref{fig8}(a), the Rx coil was placed parallel to the Tx plane with a gap distance of 40 mm and moved to 15 positions arranged in a $3\times5$ grid. As shown in Fig.~\ref{fig8}(b), the proposed system maintains a PTE above 50\% even at the farthest offset positions, indicating effective power transfer under relatively large lateral offsets. However, when the Rx coil is located at the geometric center of the Tx coil array, the measured PTE drops to 9.3\% because of the intrinsic field-cancellation effect of the DD coil structure. Despite this limitation, the results demonstrate that the proposed system can maintain effective power transfer under lateral misalignment.
+
+
+Finally, Table \ref{tab1} compares the proposed system with recent orientation-tolerant WPT systems. The proposed system provides orientation-tolerance capability comparable to that of other recent works. However, other systems usually rely on more complex strategies. For example, \cite{consu} employs three excitation channels with amplitude modulation, and \cite{multi} adopts four-channel closed-loop phase control. These methods require multiple independent excitation channels to create rotating or targeted magnetic fields. By contrast, the proposed system requires only a single excitation channel with discrete coil selection.
+
+\begin{table}[!t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4.7pt}
+\renewcommand{\arraystretch}{2}
+
+\caption{Comparison with other orientation-tolerant WPT systems}
+\label{tab1}
+
+\begin{threeparttable}
+\begin{tabular}{cccccc}
+\hline
+\textbf{Ref.}  & \cite{3D} & \cite{consu} & \cite{hybrid} & \cite{multi} & \textbf{This work} \\
+\hline
+\hline
+Year  & 2023 & 2024 & 2024 & 2024 & \textbf{-} \\
+\hline
+Freq. (MHz) & 6.78 & 6.78 & 6.78 & 6.78 & \textbf{13.56} \\
+\hline
+Tx Dim.\tnote{1} & 3-D & 2-D & 2-D & 2-D & \textbf{2-D} \\
+Rx Dim. & 2-D & 2-D & 2-D & 2-D & \textbf{2-D} \\
+\hline
+Method & switching & modulation & IMN\tnote{2} & phase-shift & \textbf{switching} \\
+Excitation & 1 & 3 & 1 & 4 & \textbf{1} \\
+\hline
+Tolerance\tnote{3} & A, E & A, E & A, E & A, E & \textbf{A, E} \\
+\hline
+Peak $\eta$ & 71.6\% & 78\% & 80\% & 80.2\% & \textbf{85.6\%} \\
+\hline
+\end{tabular}
+\vspace{0.5em}
+
+\begin{tablenotes}
+\footnotesize
+\item[1] Dim. denotes dimension.
+\item[2] IMN denotes the impedance-matching network.
+\item[3] A and E denote azimuth and elevation tolerance, respectively.
+\end{tablenotes}
+
+\end{threeparttable}
+\end{table}
+
+In addition, \cite{3D} also adopts a coil-switching strategy, but its 3-D Tx geometry is more suitable for charging devices in idle states, whereas the proposed planar Tx is better suited to charge-while-use applications due to its open transmitter structure. Furthermore, \cite{hybrid} presents an elegant passive solution that utilizes a hybrid Tx with impedance-matching networks to achieve orientation tolerance. The hybrid Tx in \cite{hybrid} is a multilayer structure composed of a bow-tie coil, a circular coil, and a DD coil. By contrast, the proposed system uses a single-layer printed Tx array, which has a more straightforward coil design while requiring a simple switching network.
+
 
 
 \section{conclusion}
-An orientation-tolerant wireless power transfer system based on a planar switched coil array has been demonstrated at 13.56~MHz. Experimental results verify that the proposed system can maintain stable power transfer over the full azimuth range, while also exhibiting tolerance to elevation variation and lateral misalignment. These results confirm that the proposed system provides an effective orientation-tolerant WPT solution with a simple planar transmitter structure and single-channel coil-switching control.
+An orientation-tolerant wireless power transfer system based on a printed switched-coil array has been demonstrated at 13.56~MHz. Experimental results verify that the proposed system can maintain stable power transfer over the full azimuth range, while also exhibiting tolerance to elevation variation and lateral misalignment. These results confirm that the proposed system provides an effective orientation-tolerant WPT solution with a planar transmitter structure and coil-switching strategy.
 
 
 \newpage
@@ -241,15 +229,9 @@ An orientation-tolerant wireless power transfer system based on a planar switche
 
 \bibitem{geo1} S. Wang, Z. Hu, C. Rong, C. Lu, J. Chen and M. Liu, ``Planar Multiple-Antiparallel Square Transmitter for Position-Insensitive Wireless Power Transfer," in IEEE Antennas and Wireless Propagation Letters, vol. 17, no. 2, pp. 188-192, Feb. 2018.
 
-\bibitem{geo2} T. -H. Kim, G. -H. Yun, W. Y. Lee and J. -G. Yook, ``Asymmetric Coil Structures for Highly Efficient Wireless Power Transfer Systems," in IEEE Transactions on Microwave Theory and Techniques, vol. 66, no. 7, pp. 3443-3451, July 2018.
-
 \bibitem{geo3} Y. Zhuang, A. Chen, C. Xu, Y. Huang, H. Zhao and J. Zhou, ``Range Adaptive Wireless Power Transfer Based on Differential Coupling Using Multiple Bidirectional Coils,” in IEEE Transactions on Industrial Electronics, vol. 67, no. 9, pp. 7519-7528, Sept. 2020.
 
 \bibitem{geo4} D. Vital and S. Bhardwaj, ``Misalignment Resilient Anchor-Shaped Antennas in Near-Field Wireless Power Transfer Using Electric and Magnetic Coupling Modes," in IEEE Transactions on Antennas and Propagation, vol. 69, no. 5, pp. 2513-2521, May 2021.
-
-\bibitem{ar1} J. Achterberg, E. A. Lomonova and J. de Boeij, "Coil Array Structures Compared for Contactless Battery Charging Platform," in IEEE Transactions on Magnetics, vol. 44, no. 5, pp. 617-622, May 2008.
-
-\bibitem{ar2} W. X. Zhong, X. Liu and S. Y. R. Hui, ``A Novel planar Winding Array and Receiver Coil Structure for Contactless Battery Charging Systems With Free-Positioning and Localized Charging Features," in IEEE Transactions on Industrial Electronics, vol. 58, no. 9, pp. 4136-4144, Sept. 2011.
 
 \bibitem{ar3} S. A. Mirbozorgi, H. Bahrami, M. Sawan and B. Gosselin, ``A Smart Multicoil Inductively Coupled Array for Wireless Power Transmission," in IEEE Transactions on Industrial Electronics, vol. 61, no. 11, pp. 6061-6070, Nov. 2014.
 
@@ -257,19 +239,15 @@ An orientation-tolerant wireless power transfer system based on a planar switche
 
 \bibitem{3drx1} Z. Zhang and B. Zhang, ``Angular-Misalignment Insensitive Omnidirectional Wireless Power Transfer," in IEEE Transactions on Industrial Electronics, vol. 67, no. 4, pp. 2755-2764, April 2020.
 
-\bibitem{3drx2} S. Kamotesov, P. Lombard, V. Semet, B. Allard, M. Moguedet and M. Cabrera, ``Omnidirectional inductive wireless charging of a 3D receiver cube inside a box," 2018 IEEE Wireless Power Transfer Conference (WPTC), Montreal, QC, Canada, 2018, pp. 1-4.
 
 \bibitem{3drx3} A. Basir, I. A. Shah and H. Yoo, ``Sphere-Shaped Receiver Coil for Misalignment-Resilient Wireless Power Transfer Systems for Implantable Devices," in IEEE Transactions on Antennas and Propagation, vol. 70, no. 9, pp. 8368-8378, Sept. 2022.
 
-\bibitem{3drx4} M. R. Basar, M. Y. Ahmad, J. Cho and F. Ibrahim, ``An Improved Wearable Resonant Wireless Power Transfer System for Biomedical Capsule Endoscope," in IEEE Transactions on Industrial Electronics, vol. 65, no. 10, pp. 7772-7781, Oct. 2018.
 
 \bibitem{3drx5} S. R. Khan, S. K. Pavuluri, G. Cummins and M. P. Y. Desmulliez, ``Miniaturized 3-D Cross-Type Receiver for Wirelessly Powered Capsule Endoscopy," in IEEE Transactions on Microwave Theory and Techniques, vol. 67, no. 5, pp. 1985-1993, May 2019.
 
-\bibitem{comp1} D. Liu, H. Hu and S. V. Georgakopoulos, ``Misalignment Sensitivity of Strongly Coupled Wireless Power Transfer Systems," in IEEE Transactions on Power Electronics, vol. 32, no. 7, pp. 5509-5519, July 2017.
 
 \bibitem{comp2} Z. Liu et al., ``A Misalignment Resilient System for Magnetically Coupled Resonant Wireless Power Transfer," in IEEE Transactions on Antennas and Propagation, vol. 68, no. 12, pp. 8260-8265, Dec. 2020.
 
-\bibitem{om2014} W. M. Ng, C. Zhang, D. Lin and S. Y. Ron Hui, ``Two- and Three-Dimensional Omnidirectional Wireless Power Transfer," in IEEE Transactions on Power Electronics, vol. 29, no. 9, pp. 4470-4474, Sept. 2014.
 
 \bibitem{bowl} J. Feng, Q. Li, F. C. Lee and M. Fu, ``Transmitter Coils Design for Free-Positioning Omnidirectional Wireless Power Transfer System," in IEEE Transactions on Industrial Informatics, vol. 15, no. 8, pp. 4656-4664, Aug. 2019.
 
@@ -288,10 +266,6 @@ H. Le-Huu and C. Seo, ``A Hybrid Transmitting Coil for Improving Angular Freedom
 
 \bibitem{multi}
 N. Kang, H. Qin, R. Ma, C. H. T. Lee, M. Liu and C. Ma, ``Magnetic Field Projection and Current Phase Control in a 2-D Planar Transmitting Coil Array," in IEEE Transactions on Power Electronics, vol. 39, no. 9, pp. 10623-10637, Sept. 2024.
-
-\bibitem{uav}
-T. Feng, Y. Xu, J. Jiang, K. Shi, P. Wang and J. Hou, ``An Omnidirectional Wireless Power Transfer System via Two Orthogonal Bipolar Coils and Targeting Magnetic Field Control for UAVs," in IEEE Transactions on Power Electronics, vol. 41, no. 4, pp. 7084-7102, April 2026.
-
 
 \end{thebibliography}
 
