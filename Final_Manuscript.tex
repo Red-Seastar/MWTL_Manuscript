@@ -44,11 +44,11 @@ University of Liverpool, Liverpool L69 3BX, U.K.}}
 \maketitle
 
 \begin{abstract}
-In this letter, a reconfigurable wireless power transfer (WPT) system with enhanced spatial freedom is proposed and demonstrated at 13.56~MHz. The transmitter consists of three single-layer triangular double-D coils arranged as a hexagonal array and driven by a relay-based coil-selection network. Measurements show that the proposed system achieves stable power transfer over the full azimuth range of 0$^\circ$--360$^\circ$, with an average power transfer efficiency (PTE) of 66.4\%. Additional measurements confirm that the PTE remains above 60\% under elevation variation and above 65\% during azimuthal rotation at different elevation angles (30$^\circ$ and 60$^\circ$). Lateral-position measurements show $>$50\% PTE at large offsets. These results demonstrate that the proposed system provides enhanced spatial freedom with a single-layer transmitter structure and a discrete coil selection strategy.
+In this letter, a reconfigurable wireless power transfer (WPT) system is proposed and demonstrated at 13.56~MHz. The transmitter consists of three single-layer triangular double-D coils arranged as a hexagonal array and driven by a relay-based coil-selection network. Measurements show that the proposed system achieves stable power transfer over the full azimuth range of 0$^\circ$--360$^\circ$, with an average power transfer efficiency (PTE) of 66.4\%. Additional measurements confirm that the PTE remains above 60\% under elevation variation and above 65\% during azimuthal rotation at different elevation angles (30$^\circ$ and 60$^\circ$). Lateral-position measurements show PTE above 50\% at large offsets. These results demonstrate that the proposed system can maintain stable wireless power transfer performance under receiver movement.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Wireless power transfer (WPT), magnetic resonance coupling (MRC), spatial freedom, discrete coil selection, 2-D transmitter, power transfer efficiency.
+Wireless power transfer (WPT), magnetic resonance coupling (MRC), discrete coil selection, 2-D transmitter, power transfer efficiency.
 \end{IEEEkeywords}
 
 
@@ -60,9 +60,9 @@ Wireless power transfer (WPT), magnetic resonance coupling (MRC), spatial freedo
 
 Many studies have improved position freedom by modifying the coil geometry \cite{geo1,geo3,geo4} or arrangement \cite{ar3,ar4}. These methods can alleviate coupling degradation when the receiver is laterally displaced over the transmitter surface. However, most are developed assuming parallel transmitter and receiver alignment, making them unable to accommodate angular variations from receiver rotation or elevation changes.
 
-A common approach to improving angular freedom is to employ three-dimensional coil structures. Three-dimensional receivers can effectively maintain coupling in different angular positions \cite{3drx1,3drx3,3drx5}, but their volumetric structure limits their suitability for compact devices. Alternatively, three-dimensional transmitters can also enhance spatial freedom while allowing the receiver to remain 2-D \cite{comp2,bowl,3D}. However, enclosing transmitter structures may obstruct the device during charging, making them less suitable for charge-while-use applications.
+A common approach to improving angular freedom is to employ three-dimensional coil structures. Three-dimensional receivers can effectively maintain coupling in different angular positions \cite{3drx1,3drx3,3drx5}, but their volumetric structure limits their suitability for compact devices. Alternatively, three-dimensional transmitters \cite{comp2} or enclosing transmitters \cite{bowl,3D} can also enhance spatial freedom while allowing the receiver to remain 2-D. However, enclosing transmitter structures may obstruct the device during charging, making them less suitable for charge-while-use applications.
 
-More recently, WPT systems with enhanced angular freedom have also been realized with 2-D coil structures only. For example, \cite{consu} generates a rotating magnetic field by applying amplitude modulation. In \cite{multi}, magnetic field shaping is achieved through closed-loop phase control. These methods can effectively address angular variation without using 3D coils, but often require more complex implementations that involve multiple excitation channels or multilayer coil structures.
+More recently, WPT systems with enhanced angular freedom have also been realized using only 2-D coil structures. For example, \cite{consu} generates a rotating magnetic field by synthesizing a 3-D magnetic field. In \cite{multi}, magnetic field shaping is achieved through closed-loop phase control. These methods can effectively address angular variation without using \mbox{3-D} coils, but often require more complex implementations that involve multiple excitation channels or multilayer coil structures.
 
 In this letter, a reconfigurable WPT system with enhanced spatial freedom is proposed. With its simple, single-layer, and open transmitter structure, the proposed system can maintain effective power transfer under both azimuthal rotation and elevation variation.
 
@@ -97,13 +97,13 @@ The proposed WPT system is designed to tolerate both azimuthal rotation and elev
 \label{fig3}
 \end{figure}
 
-The equivalent circuit of the proposed WPT system is shown in Fig.~\ref{fig3}. Each Tx coil is modeled as a separate RLC branch, which includes a resonant capacitor that tunes the system operating frequency to 13.56~MHz. For each coil selected, the active Tx branch and the Rx coil form a conventional two-coil WPT system with series--series (SS) compensation.
+The equivalent circuit of the proposed WPT system is shown in Fig.~\ref{fig3}. Each Tx coil is modeled as a separate RLC branch, which includes a resonant capacitor that tunes the system operating frequency to 13.56~MHz. For each selected coil, the active Tx branch and the Rx coil form a conventional two-coil WPT system with series--series (SS) compensation.
 
 The S-parameters were measured using a vector network analyzer (Keysight E5071C), and the relay states were set by an Arduino Uno R3 microcontroller. To evaluate the performance of the proposed WPT system, the power transfer efficiency (PTE) is calculated from the measured S-parameters as follows \cite{pte1}:
 
 \begin{equation}
 \label{deqn_ex1}
-\mathrm{PTE} = \frac{|S_{21}|^2}{1-|S_{11}|^2}\times100\%
+\eta = \frac{|S_{21}|^2}{1-|S_{11}|^2}\times100\%
 \end{equation}
 
 
@@ -122,7 +122,7 @@ The S-parameters were measured using a vector network analyzer (Keysight E5071C)
 \label{fig4}
 \end{figure}
 
-Full-wave simulations of the hexagonal array transmitter were conducted in CST Studio Suite to evaluate the magnetic field distribution. At a height of $z=5$~mm above the transmitter plane, the $z$-component of the magnetic field strength was recorded for each coil when energized individually, as shown in Fig.~\ref{fig4}. The two spirals within each triangular double-D (DD) coil produced comparable field strengths in opposite directions, and all three cases exhibited clear N--S polarity, which preliminarily verified the intended behavior of the DD coils. The field maps also indicate that the deactivated coils do not noticeably distort the active-coil field distribution.
+Full-wave simulations of the hexagonal array transmitter were conducted in CST Studio Suite to evaluate the magnetic field distribution. At a height of $z=5$~mm above the transmitter plane, the $z$-component of the magnetic field was recorded for each coil when energized individually, as shown in Fig.~\ref{fig4}. The two spirals within each triangular double-D (DD) coil produced comparable field strengths in opposite directions, and all three cases exhibited clear N--S polarity, which preliminarily verified the intended behavior of the DD coils. The field maps also indicate that the deactivated coils do not noticeably distort the active-coil field distribution.
 
 An azimuthal rotation experiment was performed with the vertical Rx setup ($\phi=90^\circ$). As shown in Fig.~\ref{fig6}, by selecting among the three Tx coils, the proposed system maintains effective power transfer over the full azimuth range of $\theta=0^\circ$ to $360^\circ$. The measured average PTE is 66.4\%, with a maximum of 68.3\% and a minimum of 63.4\%.
 
@@ -140,7 +140,7 @@ To investigate elevation variation, an elevation-only test was carried out under
 \label{fig7a}}
 \subfloat[]{\includegraphics[width=0.42\linewidth]{RE_PTE_180.png}%
 \label{fig7b}}
-\caption{Power transfer efficiency of the proposed WPT system with: (a) elevation-only variation when coil 1 is activated and (b) azimuthal variation at two elevation angles ($\phi=30^\circ$ and $\phi=60^\circ$) with the full WPT system.}
+\caption{Power transfer efficiency of the proposed WPT system with (a) elevation-only variation when coil 1 is activated and (b) azimuthal variation at two elevation angles ($\phi=30^\circ$ and $\phi=60^\circ$) with the full WPT system.}
 \label{fig7}
 \end{figure}
 
@@ -161,13 +161,11 @@ Additionally, azimuthal rotation was investigated at different elevation angles,
 The proposed WPT system was also tested under lateral offsets. As shown in Fig.~\ref{fig8}(a), the Rx coil was placed parallel to the Tx plane with a gap distance of 40~mm and moved to 15 positions arranged in a $3\times5$ grid. As shown in Fig.~\ref{fig8}(b), the proposed system maintains a PTE above 50\% at the farthest offset positions, indicating effective power transfer under relatively large lateral offsets. However, when the Rx coil is located at the geometric center of the Tx coil array, the measured PTE drops to 9.3\% because of the intrinsic field-cancellation effect of the DD coil structure. Therefore, the results might be interpreted as demonstrating large-offset transfer capability with a center null.
 
 
-Finally, Table~\ref{tab1} compares the proposed system with recent WPT systems designed for improved spatial freedom. The proposed system provides azimuth and elevation coverage comparable to that of other recent works. However, other systems usually rely on more complex strategies. For example, \cite{consu} employs three excitation channels with amplitude modulation, and \cite{multi} adopts four-channel closed-loop phase control. These methods require multiple independent excitation channels to create rotating or targeted magnetic fields. By contrast, the proposed system requires only a single excitation channel with DCS.
-
 \begin{table}[!t]
 \centering
 \footnotesize
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{2.1}
 
 \caption{Comparison with other WPT systems}
 \label{tab1}
@@ -175,36 +173,37 @@ Finally, Table~\ref{tab1} compares the proposed system with recent WPT systems d
 \begin{threeparttable}
 \begin{tabular}{cccccc}
 \hline
-\textbf{Ref.}  & \cite{3D} & \cite{consu} & \cite{hybrid} & \cite{multi} & \textbf{This work} \\
+\textbf{Ref.} & \cite{comp2} & \cite{3D} & \cite{consu} & \cite{hybrid}  & \textbf{This work} \\
 \hline
 \hline
-Year  & 2023 & 2024 & 2024 & 2024 & \textbf{2026} \\
+Year  & 2020 & 2023 & 2024 & 2024 & \textbf{2026} \\
 \hline
-Freq. (MHz) & 6.78 & 6.78 & 6.78 & 6.78 & \textbf{13.56} \\
+Freq. (MHz) & 13.56 & 6.78 & 6.78 & 6.78 & \textbf{13.56} \\
 \hline
-Tx Dim.\tnote{1} & 3-D & 2-D & 2-D & 2-D & \textbf{2-D} \\
-Rx Dim. & 2-D & 2-D & 2-D & 2-D & \textbf{2-D} \\
+Dim. Tx \,$\mid$\,Rx\tnote{1} & 3\,$\mid$\,2 & 3\,$\mid$\,2 & 2\,$\mid$\,2 & 2\,$\mid$\,2 & \textbf{2\,$\mid$\,2} \\
 \hline
-Method & Switching & modulation & IMN\tnote{2} & phase-shift & \textbf{DCS} \\
-Excitation & 1 & 3 & 1 & 4 & \textbf{1} \\
+Method & 3-D coil & 3-D coil & 3-D H-field & IMN\tnote{2} & \textbf{DCS} \\
+Excitation & 1 & 1 & 3 & 1 & \textbf{1} \\
 \hline
-Peak $\eta$ & 71.6\% & 78\% & 80\% & 80.2\% & \textbf{85.6\%} \\
+$\Delta \eta$, Az.\tnote{3} & - & 30\% & 15.4\% & 5\% & \textbf{7.2\%} \\
+\hline
+Max. $\eta$ & 83.6\% & 71.6\% & 78\% & 80\% & \textbf{85.6\%} \\
 \hline
 \end{tabular}
 \vspace{0.5em}
 
 \begin{tablenotes}
 \footnotesize
-\item[1] Dim. denotes dimension.
+\item[1] Dim. Tx\,$\mid$\,Rx represents the structural dimensionality of the WPT systems, where 3\,$\mid$\,2 means 3-D transmitter and 2-D receiver.
 \item[2] IMN denotes the impedance-matching network.
+\item[3] $\Delta \eta$, Az. represents the PTE variation over the azimuthal rotation range, calculated as $\Delta \eta = \frac{\eta_{\max}-\eta_{\min}}{\eta_{\max}}\times100\%$.
 
 \end{tablenotes}
 
 \end{threeparttable}
 \end{table}
 
-In addition, \cite{3D} also adopts a mechanism similar to the proposed DCS strategy, but its 3-D Tx geometry is more suitable for charging devices in idle states, whereas the proposed 2-D Tx is better suited to charge-while-use applications due to its open transmitter structure. Furthermore, \cite{hybrid} presents an elegant passive solution that utilizes a hybrid Tx with impedance-matching networks to achieve angular coverage. The hybrid Tx in \cite{hybrid} is a multilayer structure composed of a bow-tie coil, a circular coil, and a DD coil. By contrast, the proposed system uses a single-layer printed Tx array, which has a more straightforward coil design while requiring a simple DCS network.
-
+Finally, Table~\ref{tab1} compares the proposed system with recent WPT systems designed to improve spatial freedom. The proposed system provides azimuthal and elevation tolerance comparable to those of other recent works, while using a relatively simple strategy and transmitter structure. Its azimuthal PTE variation of 7.2\% also indicates high stability during receiver rotation. For example, \cite{consu} employs three excitation channels with independent current control to generate a 3-D rotating magnetic field. By contrast, the proposed system requires only a single excitation channel with a simple DCS network. In \cite{comp2}, a three-dimensional transmitter is used to improve elevation coverage; however, the system still exhibits a power null point and requires mechanical adjustment of the transmitter coil. A 3-D transmitter is also adopted in \cite{3D}, achieving both azimuthal and elevation tolerance. Nevertheless, the enclosed transmitter structure in \cite{3D} is more suitable for charging devices in idle states, whereas the proposed planar Tx is better suited to charge-while-use applications due to its open transmitter structure. Furthermore, \cite{hybrid} presents an elegant passive solution that utilizes a hybrid Tx with impedance-matching networks to achieve angular coverage. The hybrid Tx in \cite{hybrid} is a multilayer structure composed of a bow-tie coil, a circular coil, and a DD coil. By contrast, the proposed system uses a single-layer printed PCB Tx array, which has a more straightforward coil design while requiring a simple DCS network. 
 
 
 \section{Conclusion}
